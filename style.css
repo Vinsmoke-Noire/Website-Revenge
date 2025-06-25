@@ -1,280 +1,162 @@
 /* =================================================================== */
-/*             REVENGE LEGENDS - STYLESHEET LENGKAP v4.2               */
+/*             REVENGE LEGENDS - STYLESHEET LENGKAP v5.1               */
 /* =================================================================== */
 
-/* Variabel Warna & Font Dasar */
-:root {
-    --primary-red: #9d2020;
-    --primary-red-glow: rgba(200, 42, 42, 0.7);
-    --support-discord: #5865F2;
-    --whatsapp-green: #25D366;
-    --email-gray: #7f8c8d;
-    --youtube-red: #FF0000;
-    --product-title-gold: #ffb703;
-    --text-color: #d1d1d1;
-    --dark-bg: #121212;
-    --card-bg: #2a2d3a;
-    --stone-border: #4a4a4a;
-    --font-heading: 'Saira Stencil One', sans-serif;
-    --font-body: 'Saira', sans-serif;
-}
-
-/* Reset & Gaya Global */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-    font-family: var(--font-body);
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-    background: #000 url('https://www.minecraft.net/content/dam/games/minecraft/key-art/Minecraft-Player-In-Cave.jpeg') no-repeat center center/cover;
-    background-attachment: fixed;
-}
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-h1, h2, h3 { font-family: var(--font-heading); letter-spacing: 1.5px; color: white; }
-h2 { font-size: 3rem; text-align: center; margin-bottom: 50px; text-transform: uppercase; text-shadow: 0 0 15px var(--primary-red-glow); }
-section { padding: 100px 0; position: relative; }
-
-/* Header & Navigasi */
-header { background-color: transparent; position: fixed; width: 100%; top: 0; z-index: 1000; transition: background-color 0.4s ease, backdrop-filter 0.4s ease; }
-header.scrolled, header.header-solid {
-    background-color: rgba(18, 18, 18, 0.7);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--stone-border);
-}
-nav.container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-.nav-logo { display: flex; align-items: center; text-decoration: none; color: white; font-family: var(--font-heading); font-size: 1.4rem; transition: transform 0.3s ease; }
-.nav-logo:hover { transform: scale(1.05); }
-.nav-logo img { margin-right: 10px; }
-nav ul { list-style: none; display: flex; align-items: center; }
-nav ul li { margin-left: 25px; }
-nav ul li a { text-decoration: none; color: var(--text-color); font-weight: bold; transition: color 0.3s ease, text-shadow 0.3s ease; padding-bottom: 5px; border-bottom: 2px solid transparent; }
-nav ul li a:hover { color: white; text-shadow: 0 0 8px var(--primary-red-glow); border-bottom-color: var(--primary-red); }
-.nav-button-support a { display: inline-flex; align-items: center; gap: 8px; background-color: var(--primary-red); padding: 8px 18px; border-radius: 50px; font-size: 0.9rem; box-shadow: 0 0 15px var(--primary-red-glow); transition: all 0.3s ease; border-bottom: none; color: white; }
-.nav-button-support a:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--primary-red-glow); border-bottom: none; color: white; }
-.nav-button-support a i { font-size: 1em; }
-
-/* Gaya untuk Halaman Tanpa Hero Section */
-main.page-content { padding-top: 120px; padding-bottom: 60px; }
-
-/* Hero Section */
-#hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
-#hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(18, 18, 18, 0.5) 0%, rgba(18, 18, 18, 1) 80%); z-index: 1; }
-.hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
-.hero-logo-container { perspective: 1000px; }
-.hero-logo { max-width: 280px; margin-bottom: 20px; filter: drop-shadow(0 0 25px var(--primary-red-glow)); transition: transform 0.1s ease-out; }
-#hero h1 { font-size: 5rem; color: white; text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 30px var(--primary-red-glow); margin-bottom: 10px; }
-#hero p { font-size: 1.3rem; max-width: 600px; margin: 0 auto 30px; color: var(--text-color); }
-.server-status-container { display: inline-flex; align-items: center; background-color: var(--card-bg); padding: 15px; border-radius: 15px; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; justify-content: center; }
-.status-box { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px 20px; min-width: 120px; border-radius: 10px; transition: transform 0.3s ease, background-color 0.3s ease; }
-a.status-box { text-decoration: none; color: var(--text-color); }
-a.status-box:hover { transform: scale(1.05); background-color: rgba(255, 255, 255, 0.1); }
-.icon { height: 24px; width: 24px; color: var(--text-color); }
-.status-divider { width: 1px; height: 40px; background-color: rgba(255, 255, 255, 0.2); }
-.status-text { font-size: 1.1rem; font-weight: 500; color: var(--text-color); }
-.status-text .status-online { color: #2ecc71; font-weight: bold; }
-.status-text .status-offline { color: #e74c3c; font-weight: bold; }
-.status-text .status-error { color: #f39c12; font-weight: bold; }
-.cta-button { background-color: var(--primary-red); color: white; padding: 18px 40px; text-decoration: none; font-family: var(--font-heading); font-size: 1.3rem; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--primary-red); box-shadow: 0 0 15px transparent; }
-.cta-button:hover { background-color: #c02a2a; transform: translateY(-5px) scale(1.05); box-shadow: 0 0 25px var(--primary-red-glow); }
-
-/* Animasi Scroll */
-.hidden { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.hidden.visible { opacity: 1; transform: translateY(0); }
-
-/* Fitur Section */
-#fitur, #store, #gabung { padding-bottom: 60px; }
-.fitur-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-.fitur-item { background: rgba(30, 30, 30, 0.5); backdrop-filter: blur(10px); padding: 35px; border-radius: 10px; border: 1px solid var(--stone-border); text-align: center; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-.fitur-item:hover { transform: translateY(-10px); border-color: var(--primary-red); box-shadow: 0 0 20px var(--primary-red-glow); }
-.fitur-item h3 { color: var(--primary-red); margin-bottom: 15px; font-size: 1.5rem; font-family: var(--font-body); font-weight: 700; text-transform: none; }
-.fitur-item p { text-align: center; }
-
-/* Store Section (Kategori) */
-#store { background-color: #1a1a1a; border-top: 1px solid var(--stone-border); }
-#store h2 { font-family: var(--font-body); text-shadow: none; font-size: 2.5rem; font-weight: 700; text-transform: none; color: white; }
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
-.product-card { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; background-color: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid transparent; transition: transform 0.3s ease, border-color 0.3s ease; }
-.product-card:hover { transform: translateY(-10px); border-color: var(--product-title-gold); }
-.product-card img { max-width: 100px; margin-bottom: 20px; image-rendering: pixelated; }
-.product-card h3 { font-family: var(--font-body); font-weight: 700; color: var(--product-title-gold); font-size: 1.8rem; margin-bottom: 5px; text-transform: none; }
-.product-card p { color: var(--text-color); font-size: 0.9rem; }
-
-/* Gabung Section */
-#gabung { background-color: var(--dark-bg); border-top: 1px solid var(--stone-border); padding-top: 100px; }
-#gabung h2 { text-align: center; }
-.join-subtitle { text-align: center; margin: -30px auto 40px; max-width: 600px; }
-.join-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: stretch; }
-.ip-box { background-color: var(--card-bg); border: 1px solid var(--stone-border); padding: 30px; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-.ip-address-group { display: flex; flex-direction: column; gap: 15px; }
-.ip-address-group strong { font-family: 'Courier New', Courier, monospace; font-size: 1.5rem; color: white; background-color: #000; padding: 15px 20px; border-radius: 8px; text-align: center; }
-#copy-ip-btn { background-color: var(--primary-red); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; transition: background-color 0.3s; }
-#copy-ip-btn:hover { background-color: #c02a2a; }
-.tutorial-box { background-color: var(--card-bg); border: 1px solid var(--stone-border); padding: 30px; border-radius: 15px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
-.tutorial-box p { margin-bottom: 20px; font-size: 1.1rem; }
-.tutorial-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px; background-color: var(--youtube-red); color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; border-radius: 8px; transition: background-color 0.3s, transform 0.2s; }
-.tutorial-button:hover { background-color: #c40000; transform: scale(1.02); }
-.tutorial-button i { font-size: 1.3em; }
-
-/* Halaman Detail (Ranks, Gems, dll.) */
-.page-header { text-align: center; margin-bottom: 40px; position: relative; padding-top: 20px; }
-.back-button { display: inline-flex; align-items: center; gap: 8px; color: var(--text-color); text-decoration: none; font-weight: bold; transition: color 0.3s; position: absolute; top: 0; left: 0; }
-.back-button:hover { color: white; }
-.category-title { font-family: var(--font-body); font-size: 1.8rem; font-weight: bold; color: var(--product-title-gold); text-transform: uppercase; display: inline-block; padding-bottom: 10px; border-bottom: 2px solid var(--stone-border); margin-bottom: 0;}
-#rank-list .container, #gem-list .container, #support .container, #rank-detail .container, #payment-page .container { position: relative; }
-.rank-grid, .product-item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; }
-.rank-card, .product-item-card { background-color: var(--card-bg); border-radius: 15px; padding: 20px; text-align: center; position: relative; overflow: hidden; border: 1px solid var(--stone-border); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column;}
-.rank-card:hover, .product-item-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
-.rank-card .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-.info-button { background-color: rgba(255,255,255,0.1); border: none; color: white; width: 24px; height: 24px; border-radius: 50%; font-weight: bold; cursor: pointer; font-family: serif; transition: background-color 0.3s; z-index: 2; }
-.info-button:hover { background-color: rgba(255,255,255,0.2); }
-.sale-banner { position: absolute; top: 15px; right: -35px; background-color: #e74c3c; color: white; padding: 5px 35px; font-size: 0.9rem; font-weight: bold; transform: rotate(45deg); z-index: 1; }
-.rank-card img, .product-item-card img { max-width: 80px; margin-bottom: 20px; image-rendering: pixelated; margin-left: auto; margin-right: auto; }
-.rank-name, .product-item-name { font-family: var(--font-body); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; color: white; margin-bottom: 15px; }
-.price-container { margin-bottom: 15px; }
-.original-price { text-decoration: line-through; color: #888; margin-right: 10px; }
-.discounted-price, .product-item-price { font-size: 1.5rem; font-weight: bold; color: var(--product-title-gold); }
-.card-buttons { margin-top: auto; display: flex; flex-direction: column; gap: 10px; width: 100%;}
-.features-button, .purchase-button { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background-color 0.3s, transform 0.2s; text-decoration: none; display: block; font-family: var(--font-body); width: 100%;}
-.features-button { background-color: var(--stone-border); color: white; }
-.features-button:hover { background-color: #636363; }
-.purchase-button { background-color: var(--primary-red); color: white; }
-.purchase-button:hover { background-color: #c02a2a; }
-.product-item-card { padding: 30px 20px; }
-.product-item-price { margin-bottom: 25px; }
-
-/* Halaman Detail Rank (Spesifik) */
-.rank-detail-header { text-align: center; margin-bottom: 40px; }
-.rank-detail-header img { max-width: 120px; margin-bottom: 20px; image-rendering: pixelated;}
-.rank-detail-header h1 { font-size: 3rem; color: white; }
-.rank-detail-content { background-color: var(--card-bg); border-radius: 15px; padding: 40px; max-width: 700px; margin: 0 auto; }
-.rank-detail-content h2 { font-size: 1.8rem; text-align: left; text-shadow: none; margin-bottom: 20px; border-bottom: 1px solid var(--stone-border); padding-bottom: 10px; }
-.features-list { list-style: none; padding-left: 10px; margin-bottom: 30px; }
-.features-list li { margin-bottom: 12px; font-size: 1.1rem; display: flex; align-items: center; }
-.features-list i { margin-right: 15px; width: 20px; text-align: center; }
-.features-list .fa-check { color: #2ecc71; }
-.features-list .fa-times { color: #e74c3c; }
-.price-container-detail { text-align: center; margin-bottom: 30px; }
-.purchase-button.large { font-size: 1.2rem; padding: 15px; text-align: center;}
-
-/* Halaman Support & Payment */
-#payment-page .container { max-width: 950px; }
-#support .page-header h2 { text-shadow: 0 0 15px var(--support-discord); margin-bottom: 0; border: none;}
-.support-subtitle, .item-details-display { text-align: center; margin: 20px auto 40px; max-width: 700px; }
-.item-details-display { font-size: 1.2rem; background-color: var(--card-bg); padding: 15px; border-radius: 10px; border: 1px solid var(--stone-border); }
-.item-details-display strong { color: var(--product-title-gold); }
-.support-layout-grid, .payment-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
-.support-buttons-column { display: flex; flex-direction: column; gap: 20px; }
-.support-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-size: 1.1rem; font-weight: bold; font-family: var(--font-body); border: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.support-button:hover { transform: scale(1.05); }
-.support-button i { font-size: 1.2em; }
-.support-button.discord { background: var(--support-discord); box-shadow: 0 0 20px rgba(88, 101, 242, 0.4); }
-.support-button.whatsapp { background: var(--whatsapp-green); box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
-.support-button.email { background: var(--email-gray); box-shadow: 0 0 20px rgba(127, 140, 141, 0.4); }
-.contact-form .form-row { display: flex; gap: 20px; margin-bottom: 20px; }
-.contact-form .form-group { flex: 1; display: flex; flex-direction: column; }
-.contact-form label { margin-bottom: 8px; font-weight: bold; color: var(--text-color); }
-.contact-form input, .contact-form textarea { background-color: #2a2d3a; border: 1px solid var(--stone-border); border-radius: 8px; padding: 12px; color: white; font-family: var(--font-body); font-size: 1rem; transition: border-color 0.3s, box-shadow 0.3s; }
-.contact-form input::placeholder, .contact-form textarea::placeholder { color: #6c757d; }
-.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--primary-red); box-shadow: 0 0 10px var(--primary-red-glow); }
-.contact-form textarea { resize: vertical; min-height: 120px; }
-.form-submit-button { background-color: white; color: #121212; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: background-color 0.3s, transform 0.2s; float: right; margin-top: 10px; }
-.form-submit-button:hover { background-color: #e0e0e0; transform: scale(1.02); }
-
-.payment-option { background-color: var(--card-bg); border-radius: 15px; padding: 30px; border: 1px solid var(--stone-border); }
-.payment-logo { height: 35px; margin-bottom: 20px; }
-.payment-option h3 { font-family: var(--font-body); font-size: 1.5rem; text-transform: none; margin-bottom: 20px; }
-.payment-instructions { list-style-position: inside; margin-bottom: 30px; padding-left: 5px; color: var(--text-color); }
-.payment-instructions li { margin-bottom: 8px; }
-.payment-number-box { display: flex; justify-content: space-between; align-items: center; background-color: #000; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--stone-border); }
-.payment-number-box span { font-family: 'Courier New', Courier, monospace; font-size: 1.2rem; }
-.payment-number-box button { background-color: var(--primary-red); color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
-.qris-code-container img { width: 100%; max-width: 200px; display: block; margin: 0 auto; border-radius: 10px; background-color: white; }
-.confirmation-note { margin-top: 40px; padding: 20px; background-color: rgba(255, 183, 3, 0.1); border: 1px solid var(--product-title-gold); color: var(--text-color); border-radius: 10px; display: flex; align-items: center; gap: 15px; }
-.confirmation-note i { font-size: 1.5rem; color: var(--product-title-gold); }
-
-.qris-code-container img {
-    width: 100%;
-    max-width: 200px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-    background-color: white;
-}
-
-/* ========== GAYA BARU UNTUK TOMBOL DOWNLOAD QRIS ========== */
-.download-qris-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 15px;
-    padding: 10px 15px;
-    background-color: var(--stone-border);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-.download-qris-button:hover {
-    background-color: #636363;
-}
-.download-qris-button i {
-    margin-right: 5px;
-}
-/* ========================================================== */
-
-.confirmation-note {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: rgba(255, 183, 3, 0.1);
-    border: 1px solid var(--product-title-gold);
-    color: var(--text-color);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.confirmation-note i {
-    font-size: 1.5rem;
-    color: var(--product-title-gold);
-}
-
-/* Halaman Detail (Ranks, Gems, dll.) */
-.page-header { text-align: center; margin-bottom: 40px; position: relative; padding-top: 20px; }
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10; /* <<<===== PERBAIKAN DITAMBAHKAN DI SINI =====>>> */
-}
-.back-button:hover { color: white; }
-.category-title { font-family: var(--font-body); font-size: 1.8rem; font-weight: bold; color: var(--product-title-gold); text-transform: uppercase; display: inline-block; padding-bottom: 10px; border-bottom: 2px solid var(--stone-border); margin-bottom: 0;}
-#rank-list .container, #gem-list .container, #support .container, #rank-detail .container, #payment-page .container { position: relative; }
-
-/* Animasi Page Load */
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-.fade-in-up { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; animation-delay: var(--anim-delay, 0s); }
-
-/* Footer */
-footer { background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)); text-align: center; padding: 50px 0 20px 0; font-size: 0.9rem; color: #aaa; }
-
-/* Responsive */
-@media (max-width: 900px) {
-    .support-layout-grid, .join-grid, .payment-options-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-    .form-row { flex-direction: column; }
-    h2 { font-size: 2.2rem; }
-    #hero h1 { font-size: 3.5rem; }
-    #hero p { font-size: 1.1rem; }
-    nav ul { display: none; }
-}
+:root{--primary-red:#9d2020;--primary-red-glow:rgba(200,42,42,.7);--support-discord:#5865F2;--whatsapp-green:#25D366;--email-gray:#7f8c8d;--youtube-red:#FF0000;--product-title-gold:#ffb703;--text-color:#d1d1d1;--dark-bg:#121212;--card-bg:#2a2d3a;--stone-border:#4a4a4a;--font-heading:'Saira Stencil One',sans-serif;--font-body:'Saira',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background-color:var(--dark-bg);color:var(--text-color);line-height:1.6;background:#000 url(https://www.minecraft.net/content/dam/games/minecraft/key-art/Minecraft-Player-In-Cave.jpeg) no-repeat center center/cover;background-attachment:fixed}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--font-heading);letter-spacing:1.5px;color:#fff}
+h2{font-size:3rem;text-align:center;margin-bottom:50px;text-transform:uppercase;text-shadow:0 0 15px var(--primary-red-glow)}
+section{padding:100px 0;position:relative}
+header{background-color:transparent;position:fixed;width:100%;top:0;z-index:1000;transition:background-color .4s ease,backdrop-filter .4s ease}
+header.scrolled,header.header-solid{background-color:rgba(18,18,18,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone-border)}
+nav.container{display:flex;justify-content:space-between;align-items:center;height:80px}
+.nav-logo{display:flex;align-items:center;text-decoration:none;color:#fff;font-family:var(--font-heading);font-size:1.4rem;transition:transform .3s ease}
+.nav-logo:hover{transform:scale(1.05)}
+.nav-logo img{margin-right:10px}
+nav ul.desktop-nav{list-style:none;display:flex;align-items:center}
+nav ul.desktop-nav li{margin-left:25px}
+nav ul.desktop-nav li a{text-decoration:none;color:var(--text-color);font-weight:700;transition:color .3s ease,text-shadow .3s ease;padding-bottom:5px;border-bottom:2px solid transparent}
+nav ul.desktop-nav li a:hover{color:#fff;text-shadow:0 0 8px var(--primary-red-glow);border-bottom-color:var(--primary-red)}
+.nav-button-support a{display:inline-flex;align-items:center;gap:8px;background-color:var(--primary-red);padding:8px 18px;border-radius:50px;font-size:.9rem;box-shadow:0 0 15px var(--primary-red-glow);transition:all .3s ease;border-bottom:none;color:#fff}
+.nav-button-support a:hover{transform:scale(1.05);box-shadow:0 0 25px var(--primary-red-glow);border-bottom:none;color:#fff}
+.nav-button-support a i{font-size:1em}
+.hamburger-button{display:none;background:0 0;border:none;color:#fff;font-size:1.8rem;cursor:pointer;z-index:1001}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(18,18,18,.95);backdrop-filter:blur(10px);z-index:1000;flex-direction:column;justify-content:center;align-items:center}
+.mobile-nav.active{display:flex}
+.mobile-nav ul{list-style:none;padding:0;text-align:center}
+.mobile-nav ul li{margin:25px 0}
+.mobile-nav ul li a{color:#fff;text-decoration:none;font-size:2rem;font-family:var(--font-heading);transition:color .3s,text-shadow .3s}
+.mobile-nav ul li a:hover{color:var(--primary-red);text-shadow:0 0 10px var(--primary-red-glow)}
+main.page-content{padding-top:120px;padding-bottom:60px}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,rgba(18,18,18,.5) 0,rgba(18,18,18,1) 80%);z-index:1}
+.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.hero-logo-container{perspective:1000px}
+.hero-logo{max-width:280px;margin-bottom:20px;filter:drop-shadow(0 0 25px var(--primary-red-glow));transition:transform .1s ease-out}
+#hero h1{font-size:5rem;color:#fff;text-shadow:0 0 20px rgba(0,0,0,.8),0 0 30px var(--primary-red-glow);margin-bottom:10px}
+#hero p{font-size:1.3rem;max-width:600px;margin:0 auto 30px;color:var(--text-color)}
+.server-status-container{display:inline-flex;align-items:center;background-color:var(--card-bg);padding:15px;border-radius:15px;gap:15px;margin-bottom:40px;flex-wrap:wrap;justify-content:center}
+.status-box{display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 20px;min-width:120px;border-radius:10px;transition:transform .3s ease,background-color .3s ease}
+a.status-box{text-decoration:none;color:var(--text-color)}
+a.status-box:hover{transform:scale(1.05);background-color:rgba(255,255,255,.1)}
+.icon{height:24px;width:24px;color:var(--text-color)}
+.status-divider{width:1px;height:40px;background-color:rgba(255,255,255,.2)}
+.status-text{font-size:1.1rem;font-weight:500;color:var(--text-color)}
+.status-text .status-online{color:#2ecc71;font-weight:700}
+.status-text .status-offline{color:#e74c3c;font-weight:700}
+.status-text .status-error{color:#f39c12;font-weight:700}
+.cta-button{background-color:var(--primary-red);color:#fff;padding:18px 40px;text-decoration:none;font-family:var(--font-heading);font-size:1.3rem;border-radius:8px;transition:all .3s ease;border:2px solid var(--primary-red);box-shadow:0 0 15px transparent}
+.cta-button:hover{background-color:#c02a2a;transform:translateY(-5px) scale(1.05);box-shadow:0 0 25px var(--primary-red-glow)}
+.hidden{opacity:0;transform:translateY(30px);transition:opacity .8s ease-out,transform .8s ease-out}
+.hidden.visible{opacity:1;transform:translateY(0)}
+#fitur,#store,#gabung{padding-bottom:60px}
+.fitur-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.fitur-item{background:rgba(30,30,30,.5);backdrop-filter:blur(10px);padding:35px;border-radius:10px;border:1px solid var(--stone-border);text-align:center;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.fitur-item:hover{transform:translateY(-10px);border-color:var(--primary-red);box-shadow:0 0 20px var(--primary-red-glow)}
+.fitur-item h3{color:var(--primary-red);margin-bottom:15px;font-size:1.5rem;font-family:var(--font-body);font-weight:700;text-transform:none}
+.fitur-item p{text-align:center}
+#store{background-color:#1a1a1a;border-top:1px solid var(--stone-border)}
+#store h2{font-family:var(--font-body);text-shadow:none;font-size:2.5rem;font-weight:700;text-transform:none;color:#fff}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:30px}
+.product-card{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;background-color:var(--card-bg);padding:30px;border-radius:15px;border:1px solid transparent;transition:transform .3s ease,border-color .3s ease}
+.product-card:hover{transform:translateY(-10px);border-color:var(--product-title-gold)}
+.product-card img{max-width:100px;margin-bottom:20px;image-rendering:pixelated}
+.product-card h3{font-family:var(--font-body);font-weight:700;color:var(--product-title-gold);font-size:1.8rem;margin-bottom:5px;text-transform:none}
+.product-card p{color:var(--text-color);font-size:.9rem}
+#gabung{background-color:var(--dark-bg);border-top:1px solid var(--stone-border);padding-top:100px}
+#gabung h2{text-align:center}
+.join-subtitle{text-align:center;margin:-30px auto 40px;max-width:600px}
+.join-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:40px;align-items:stretch}
+.ip-box{background-color:var(--card-bg);border:1px solid var(--stone-border);padding:30px;border-radius:15px;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.ip-address-group{display:flex;flex-direction:column;gap:15px}
+.ip-address-group strong{font-family:'Courier New',Courier,monospace;font-size:1.5rem;color:#fff;background-color:#000;padding:15px 20px;border-radius:8px;text-align:center}
+#copy-ip-btn{background-color:var(--primary-red);color:#fff;border:none;padding:12px;border-radius:8px;font-weight:700;cursor:pointer;font-size:1rem;transition:background-color .3s}
+#copy-ip-btn:hover{background-color:#c02a2a}
+.tutorial-box{background-color:var(--card-bg);border:1px solid var(--stone-border);padding:30px;border-radius:15px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.tutorial-box p{margin-bottom:20px;font-size:1.1rem}
+.tutorial-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px;background-color:var(--youtube-red);color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;border-radius:8px;transition:background-color .3s,transform .2s}
+.tutorial-button:hover{background-color:#c40000;transform:scale(1.02)}
+.tutorial-button i{font-size:1.3em}
+.page-header{text-align:center;margin-bottom:40px;position:relative;padding-top:20px}
+.back-button{display:inline-flex;align-items:center;gap:8px;color:var(--text-color);text-decoration:none;font-weight:700;transition:color .3s;position:absolute;top:0;left:0;z-index:10}
+.back-button:hover{color:#fff}
+.category-title{font-family:var(--font-body);font-size:1.8rem;font-weight:700;color:var(--product-title-gold);text-transform:uppercase;display:inline-block;padding-bottom:10px;border-bottom:2px solid var(--stone-border);margin-bottom:0}
+#rank-list .container,#gem-list .container,#support .container,#rank-detail .container,#payment-page .container{position:relative}
+.rank-grid,.product-item-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;width:100%}
+.rank-card,.product-item-card{background-color:var(--card-bg);border-radius:15px;padding:20px;text-align:center;position:relative;overflow:hidden;border:1px solid var(--stone-border);transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column}
+.rank-card:hover,.product-item-card:hover{transform:translateY(-5px);box-shadow:0 5px 20px rgba(0,0,0,.2)}
+.rank-card .card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.info-button{background-color:rgba(255,255,255,.1);border:none;color:#fff;width:24px;height:24px;border-radius:50%;font-weight:700;cursor:pointer;font-family:serif;transition:background-color .3s;z-index:2}
+.info-button:hover{background-color:rgba(255,255,255,.2)}
+.sale-banner{position:absolute;top:15px;right:-35px;background-color:#e74c3c;color:#fff;padding:5px 35px;font-size:.9rem;font-weight:700;transform:rotate(45deg);z-index:1}
+.rank-card img,.product-item-card img{max-width:80px;margin-bottom:20px;image-rendering:pixelated;margin-left:auto;margin-right:auto}
+.rank-name,.product-item-name{font-family:var(--font-body);font-size:1.2rem;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:15px}
+.price-container{margin-bottom:15px}
+.original-price{text-decoration:line-through;color:#888;margin-right:10px}
+.discounted-price{font-size:1.5rem;font-weight:700;color:var(--product-title-gold)}
+.card-buttons{margin-top:auto;display:flex;flex-direction:column;gap:10px;width:100%}
+.features-button,.purchase-button{padding:12px;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:background-color .3s,transform .2s;text-decoration:none;display:block;font-family:var(--font-body);width:100%;text-align:center}
+.features-button{background-color:var(--stone-border);color:#fff}
+.features-button:hover{background-color:#636363}
+.purchase-button{background-color:var(--primary-red);color:#fff}
+.purchase-button:hover{background-color:#c02a2a}
+.purchase-button.purchased-state{background-color:#555;color:#aaa;cursor:not-allowed;opacity:.7;pointer-events:none}
+.product-item-card{padding:30px 20px}
+.product-item-price{display:block;font-size:1.5rem;font-weight:700;color:var(--product-title-gold);margin-bottom:25px}
+.rank-detail-header{text-align:center;margin-bottom:40px}
+.rank-detail-header img{max-width:120px;margin-bottom:20px;image-rendering:pixelated}
+.rank-detail-header h1{font-size:3rem;color:#fff}
+.rank-detail-content{background-color:var(--card-bg);border-radius:15px;padding:40px;max-width:700px;margin:0 auto}
+.rank-detail-content h2{font-size:1.8rem;text-align:left;text-shadow:none;margin-bottom:20px;border-bottom:1px solid var(--stone-border);padding-bottom:10px}
+.features-list{list-style:none;padding-left:10px;margin-bottom:30px}
+.features-list li{margin-bottom:12px;font-size:1.1rem;display:flex;align-items:center}
+.features-list i{margin-right:15px;width:20px;text-align:center}
+.features-list .fa-check{color:#2ecc71}
+.features-list .fa-times{color:#e74c3c}
+.price-container-detail{text-align:center;margin-bottom:30px}
+.purchase-button.large{font-size:1.2rem;padding:15px;text-align:center}
+body.support-page #support{min-height:calc(100vh - 160px)}
+#support .page-header h2{text-shadow:0 0 15px var(--support-discord);margin-bottom:0;border:none}
+.support-subtitle,.item-details-display{text-align:center;margin:20px auto 40px;max-width:700px}
+.item-details-display{font-size:1.2rem;background-color:var(--card-bg);padding:15px;border-radius:10px;border:1px solid var(--stone-border)}
+.item-details-display strong{color:var(--product-title-gold)}
+.support-layout-grid,.payment-options-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.support-buttons-column{display:flex;flex-direction:column;gap:20px}
+.support-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;color:#fff;padding:15px;border-radius:12px;text-decoration:none;font-size:1.1rem;font-weight:700;font-family:var(--font-body);border:none;transition:transform .3s ease,box-shadow .3s ease}
+.support-button:hover{transform:scale(1.05)}
+.support-button i{font-size:1.2em}
+.support-button.discord{background:var(--support-discord);box-shadow:0 0 20px rgba(88,101,242,.4)}
+.support-button.whatsapp{background:var(--whatsapp-green);box-shadow:0 0 20px rgba(37,211,102,.4)}
+.support-button.email{background:var(--email-gray);box-shadow:0 0 20px rgba(127,140,141,.4)}
+.contact-form .form-row{display:flex;gap:20px;margin-bottom:20px}
+.contact-form .form-group{flex:1;display:flex;flex-direction:column}
+.contact-form label{margin-bottom:8px;font-weight:700;color:var(--text-color)}
+.contact-form input,.contact-form textarea{background-color:#2a2d3a;border:1px solid var(--stone-border);border-radius:8px;padding:12px;color:#fff;font-family:var(--font-body);font-size:1rem;transition:border-color .3s,box-shadow .3s}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#6c757d}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--primary-red);box-shadow:0 0 10px var(--primary-red-glow)}
+.contact-form textarea{resize:vertical;min-height:120px}
+.form-submit-button{background-color:#fff;color:#121212;border:none;padding:12px 30px;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;transition:background-color .3s,transform .2s;float:right;margin-top:10px}
+.form-submit-button:hover{background-color:#e0e0e0;transform:scale(1.02)}
+#payment-page .container{max-width:950px}
+.payment-option{background-color:var(--card-bg);border-radius:15px;padding:30px;border:1px solid var(--stone-border)}
+.payment-logo{height:35px;margin-bottom:20px}
+.payment-option h3{font-family:var(--font-body);font-size:1.5rem;text-transform:none;margin-bottom:20px}
+.payment-instructions{list-style-position:inside;margin-bottom:30px;padding-left:5px;color:var(--text-color)}
+.payment-instructions li{margin-bottom:8px}
+.payment-number-box{display:flex;justify-content:space-between;align-items:center;background-color:#000;padding:10px 15px;border-radius:8px;border:1px solid var(--stone-border)}
+.payment-number-box span{font-family:'Courier New',Courier,monospace;font-size:1.2rem}
+.payment-number-box button{background-color:var(--primary-red);color:#fff;border:none;padding:8px 12px;border-radius:5px;cursor:pointer}
+.qris-code-container img{width:100%;max-width:200px;display:block;margin:0 auto;border-radius:10px;background-color:#fff}
+.download-qris-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:15px;padding:10px 15px;background-color:var(--stone-border);color:#fff;text-decoration:none;font-weight:700;border-radius:8px;transition:background-color .3s}
+.download-qris-button:hover{background-color:#636363}
+.download-qris-button i{margin-right:5px}
+.confirmation-note{margin-top:40px;padding:20px;background-color:rgba(255,183,3,.1);border:1px solid var(--product-title-gold);color:var(--text-color);border-radius:10px;display:flex;align-items:center;gap:15px}
+.confirmation-note i{font-size:1.5rem;color:var(--product-title-gold)}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.fade-in-up{opacity:0;animation:fadeInUp .8s ease-out forwards;animation-delay:var(--anim-delay,0s)}
+footer{background:linear-gradient(to top,transparent,rgba(0,0,0,0));text-align:center;padding:50px 0 20px 0;font-size:.9rem;color:#aaa}
+@media (max-width:900px){.support-layout-grid,.join-grid,.payment-options-grid{grid-template-columns:1fr}}
+@media (max-width:768px){nav ul.desktop-nav{display:none}.hamburger-button{display:block}.form-row{flex-direction:column}h2{font-size:2.2rem}#hero h1{font-size:3.5rem}#hero p{font-size:1.1rem}}
