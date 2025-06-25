@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[VIP] Rank - Revenge Legends</title>
+    <!-- GANTI TITLE INI SESUAI HALAMAN -->
+    <title>Ranks - Revenge Legends</title> 
     <link rel="icon" href="assets/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,15 +17,41 @@
     <header id="main-header" class="header-solid">
         <nav class="container">
             <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Revenge Legends Logo" height="40"><span>Revenge Legends</span></a>
-            <ul>
+            <ul class="desktop-nav">
                 <li><a href="index.html#hero">Beranda</a></li>
                 <li><a href="index.html#fitur">Fitur</a></li>
                 <li><a href="index.html#store">Store</a></li>
                 <li><a href="index.html#gabung">Gabung</a></li>
                 <li class="nav-button-support"><a href="support.html"><i class="fas fa-headset"></i> Support</a></li>
             </ul>
+            <button class="hamburger-button" id="hamburger-button" aria-label="Open menu"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
+
+    <!-- [BARU] SIDEBAR NAVIGATION -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside id="sidebar-nav">
+        <div class="sidebar-header">
+            <img src="assets/logo.png" alt="Revenge Legends Logo">
+            <h3>Revenge Legends</h3>
+            <p>Minecraft Server</p>
+        </div>
+        <div class="sidebar-socials">
+            <a href="https://discord.gg/UVwTYPxKEy" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://wa.me/6289515039261" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:revengelegendss@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html#hero"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="index.html#fitur"><i class="fas fa-star"></i> Fitur</a></li>
+            <li><a href="index.html#store"><i class="fas fa-store"></i> Store</a></li>
+            <li><a href="index.html#gabung"><i class="fas fa-gamepad"></i> Gabung</a></li>
+            <li><a href="support.html"><i class="fas fa-headset"></i> Support</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>© 2024 Revenge Legends</p>
+        </div>
+    </aside>
 
     <main class="page-content">
         <section id="rank-detail">
