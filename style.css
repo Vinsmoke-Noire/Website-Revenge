@@ -1,5 +1,5 @@
 /* =================================================================== */
-/*             REVENGE LEGENDS - STYLESHEET LENGKAP v5.1               */
+/*             REVENGE LEGENDS - STYLESHEET LENGKAP v5.2               */
 /* =================================================================== */
 
 :root{--primary-red:#9d2020;--primary-red-glow:rgba(200,42,42,.7);--support-discord:#5865F2;--whatsapp-green:#25D366;--email-gray:#7f8c8d;--youtube-red:#FF0000;--product-title-gold:#ffb703;--text-color:#d1d1d1;--dark-bg:#121212;--card-bg:#2a2d3a;--stone-border:#4a4a4a;--font-heading:'Saira Stencil One',sans-serif;--font-body:'Saira',sans-serif}
@@ -10,7 +10,7 @@ body{font-family:var(--font-body);background-color:var(--dark-bg);color:var(--te
 h1,h2,h3{font-family:var(--font-heading);letter-spacing:1.5px;color:#fff}
 h2{font-size:3rem;text-align:center;margin-bottom:50px;text-transform:uppercase;text-shadow:0 0 15px var(--primary-red-glow)}
 section{padding:100px 0;position:relative}
-header{background-color:transparent;position:fixed;width:100%;top:0;z-index:1000;transition:background-color .4s ease,backdrop-filter .4s ease}
+header{background-color:transparent;position:fixed;width:100%;top:0;z-index:1002;transition:background-color .4s ease,backdrop-filter .4s ease}
 header.scrolled,header.header-solid{background-color:rgba(18,18,18,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone-border)}
 nav.container{display:flex;justify-content:space-between;align-items:center;height:80px}
 .nav-logo{display:flex;align-items:center;text-decoration:none;color:#fff;font-family:var(--font-heading);font-size:1.4rem;transition:transform .3s ease}
@@ -24,12 +24,12 @@ nav ul.desktop-nav li a:hover{color:#fff;text-shadow:0 0 8px var(--primary-red-g
 .nav-button-support a:hover{transform:scale(1.05);box-shadow:0 0 25px var(--primary-red-glow);border-bottom:none;color:#fff}
 .nav-button-support a i{font-size:1em}
 .hamburger-button{display:none;background:0 0;border:none;color:#fff;font-size:1.8rem;cursor:pointer;z-index:1001}
-.mobile-nav{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(18,18,18,.95);backdrop-filter:blur(10px);z-index:1000;flex-direction:column;justify-content:center;align-items:center}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(18,18,18,.98);backdrop-filter:blur(10px);z-index:1000;flex-direction:column;justify-content:center;align-items:center}
 .mobile-nav.active{display:flex}
 .mobile-nav ul{list-style:none;padding:0;text-align:center}
 .mobile-nav ul li{margin:25px 0}
 .mobile-nav ul li a{color:#fff;text-decoration:none;font-size:2rem;font-family:var(--font-heading);transition:color .3s,text-shadow .3s}
-.mobile-nav ul li a:hover{color:var(--primary-red);text-shadow:0 0 10px var(--primary-red-glow)}
+.mobile-nav ul li a:hover{color:#9d2020;text-shadow:0 0 10px rgba(200,42,42,.7)}
 main.page-content{padding-top:120px;padding-bottom:60px}
 #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
 #hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,rgba(18,18,18,.5) 0,rgba(18,18,18,1) 80%);z-index:1}
