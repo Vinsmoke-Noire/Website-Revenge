@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenge Legends - Minecraft Server</title>
+    
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <svg style="display: none;">
+        <symbol id="icon-player" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></symbol>
+        <symbol id="icon-server" viewBox="0 0 512 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM0 352c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V352zM128 120a24 24 0 1 1 0-48 24 24 0 1 1 0 48zm40 24a24 24 0 1 1 -48 0 24 24 0 1 1 48 0zM128 376a24 24 0 1 1 0-48 24 24 0 1 1 0 48zm40 24a24 24 0 1 1 -48 0 24 24 0 1 1 48 0z"/></symbol>
+        <symbol id="icon-map" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3C161.2 299.6 160 278.2 160 256s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zM512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM128 369.3l-7.1-4.1C102.3 338.4 96 309.3 96 280c0-22.1 4.5-43.2 12.6-62.5l9.3-22.2c3.5-8.4 12-13.4 21.2-11.4l22.2 4.9c1.1-.9 2.1-1.8 3.2-2.7C177.3 174 215.1 160 256 160s78.7 14 91.5 26.1c1 .9 2 1.8 3.2 2.7l22.2-4.9c9.2-2 17.7 3 21.2 11.4l9.3 22.2C411.5 236.8 416 257.9 416 280c0 29.3-6.3 58.4-24.9 85.2l-7.1 4.1c-13.2 7.7-29.6 7.7-42.8 0l-12.7-7.4c-13.2-7.7-29.6-7.7-42.8 0l-12.7 7.4c-13.2 7.7-29.6 7.7-42.8 0l-12.7-7.4c-13.2-7.7-29.6-7.7-42.8 0z"/></symbol>
+    </svg>
+
+    <header id="main-header">
+        <nav class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/logo.png" alt="Revenge Legends Logo" height="40">
+                <span>Revenge Legends</span>
+            </a>
+            <ul>
+                <li><a href="#hero">Beranda</a></li>
+                <li><a href="#fitur">Fitur</a></li>
+                <li><a href="#store">Store</a></li>
+                <li><a href="#gabung">Gabung</a></li>
+                <li class="nav-button-support">
+                    <a href="support.html"><i class="fas fa-headset"></i> Support</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content container">
+                <div class="hero-logo-container"><img src="assets/logo.png" alt="Revenge Legends Main Logo" class="hero-logo" id="hero-logo-parallax"></div>
+                <h1 class="hidden">REVENGE LEGENDS</h1>
+                <p class="hidden">Taklukkan tantangan. Tuliskan legenda Anda di dunia yang tak kenal ampun.</p>
+                <div class="server-status-container hidden">
+                    <div class="status-box"><svg class="icon"><use xlink:href="#icon-player"></use></svg><p class="status-text" id="player-count-text">... Players</p></div>
+                    <div class="status-divider"></div>
+                    <div class="status-box"><svg class="icon"><use xlink:href="#icon-server"></use></svg><p class="status-text">Server <span id="server-status-text">...</span></p></div>
+                    <div class="status-divider"></div>
+                    <a href="http://revenge.quenssshost.my.id:12126/" target="_blank" rel="noopener noreferrer" class="status-box"><svg class="icon"><use xlink:href="#icon-map"></use></svg><p class="status-text">Live Map</p></a>
+                </div>
+                <a href="#gabung" class="cta-button hidden">GABUNG SEKARANG!</a>
+            </div>
+        </section>
+
+        <section id="fitur" class="hidden">
+            <div class="container">
+                <h2>FITUR UNGGULAN</h2>
+                <div class="fitur-grid">
+                    <div class="fitur-item"><h3>🏕️ Survival </h3><p>Dunia yang keras di mana hanya yang terkuat yang bisa bertahan. Jelajahilah dunia legendaris Revenge Legends bersama temanmu!.</p></div>
+                    <div class="fitur-item"><h3>💎 Ekonomi Unik</h3><p>Sistem ekonomi yang seimbang, didorong oleh pemain. Jual beli item langka dan jadilah yang terkaya.</p></div>
+                    <div class="fitur-item"><h3>🏰 Clan Wars</h3><p>Hanya klan terkuat yang akan bertahan di panasnya medan perang Clan Wars. Siapkan taktikmu, bentuk aliansi, dan taklukkan lawan-lawanmu satu per satu!.</p></div>
+                    <div class="fitur-item"><h3>🛡️ Komunitas Aktif</h3><p>Temukan teman baru, bergabunglah dalam event mingguan, dan jadilah bagian dari komunitas yang hebat.</p></div>
+                    <div class="fitur-item"><h3>⚔️ Senjata Legend</h3><p>Terlahir dari elemen purba dan ditempa dalam api kekuatan sejati, senjata legendaris ini bukan sekadar alat bertarung ia adalah simbol kekuasaan.</p></div>
+                    <div class="fitur-item"><h3>📈 Sistem Level & Skill</h3><p>Tingkatkan level dan buka kemampuan baru. Kembangkan karakter Anda menjadi legenda yang tak terkalahkan.</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="store" class="hidden">
+            <div class="container">
+                <h2>Our Products</h2>
+                <div class="product-grid">
+                    <a href="ranks.html" class="product-card"><img src="assets/diamond.png" alt="Minecraft Diamond"><h3>Ranks</h3><p>Start from Rp.15.000</p></a>
+                    <a href="gems.html" class="product-card"><img src="assets/emerald.png" alt="Minecraft Emerald"><h3>Points</h3><p>Start from Rp.10.000</p></a>
+                    <a href="https://sociabuzz.com/revengesmp/donate" class="product-card"><img src="assets/gold_ingot.png" alt="Minecraft Gold Ingot"><h3>Donate</h3><p>Thanks For The Donation!</p></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="gabung" class="hidden">
+            <div class="container">
+                <h2>CARA BERGABUNG</h2>
+                <p class="join-subtitle">Ikuti langkah-langkah mudah ini untuk memulai petualangan Anda.</p>
+                <div class="join-grid">
+                    <!-- Kolom Kiri: Info IP -->
+                    <div class="ip-box">
+                        <div class="ip-address-group">
+                            <strong id="server-ip">play.revenge.my.id</strong>
+                            <strong id="server-port">Port: 19132</strong>
+                        </div>
+                        <button id="copy-ip-btn">Salin IP</button>
+                    </div>
+                    <!-- Kolom Kanan: Tombol Video -->
+                    <div class="tutorial-box">
+                        <p>Masih bingung? Tonton video tutorial kami!</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="tutorial-button">
+                            <i class="fab fa-youtube"></i> Tonton Tutorial
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer><div class="container"><p>© 2024 Revenge Legends. Semua Hak Cipta Dilindungi.</p></div></footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
