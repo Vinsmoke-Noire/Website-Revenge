@@ -1,28 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Menu Hamburger ---
+    // --- [BARU] Logika Sidebar Navigasi Mobile ---
     const hamburgerBtn = document.getElementById('hamburger-button');
-    const mobileNav = document.getElementById('mobile-nav');
-    if (hamburgerBtn && mobileNav) {
+    const sidebarNav = document.getElementById('sidebar-nav');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+    if (hamburgerBtn && sidebarNav && sidebarOverlay) {
+        const icon = hamburgerBtn.querySelector('i');
+
+        const closeSidebar = () => {
+            sidebarNav.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        };
+        
+        const openSidebar = () => {
+            sidebarNav.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        };
+
         hamburgerBtn.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-            const icon = hamburgerBtn.querySelector('i');
-            if (mobileNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
+            if (sidebarNav.classList.contains('active')) {
+                closeSidebar();
             } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                openSidebar();
             }
         });
-        mobileNav.querySelectorAll('a').forEach(link => {
+
+        sidebarOverlay.addEventListener('click', closeSidebar);
+        
+        sidebarNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                hamburgerBtn.querySelector('i').classList.remove('fa-times');
-                hamburgerBtn.querySelector('i').classList.add('fa-bars');
+                // Hanya tutup jika link navigasi internal (mengandung #)
+                if (link.getAttribute('href').includes('#') || link.href.includes(window.location.host)) {
+                    // Beri sedikit waktu agar navigasi sempat terjadi sebelum sidebar ditutup
+                    setTimeout(closeSidebar, 150);
+                }
             });
         });
     }
+
 
     // --- Efek Header ---
     const header = document.getElementById('main-header');
@@ -40,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Efek Parallax ---
-    const parallaxLogo = document.getElementById('hero-logo-parallax');
+    const parallaxLogo = document.getElementById('hero-logo- parallax');
     const heroSection = document.getElementById('hero');
     if (parallaxLogo && heroSection) {
         heroSection.addEventListener('mousemove', (e) => {
@@ -119,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const itemName = params.get('item');
         const itemPrice = params.get('price');
         document.getElementById('item-name-display').textContent = itemName || 'Item tidak ditemukan';
-        document.getElementById('item-price-display').textContent = `Rp${itemPrice || '0'}`;
+        document.getElementById('item-price-display').textContent = `${itemPrice || 'Harga tidak valid'}`;
         const backBtn = document.getElementById('payment-back-btn');
         backBtn.addEventListener('click', (e) => { e.preventDefault(); history.back(); });
         const copyDanaBtn = document.getElementById('copy-dana-btn');
