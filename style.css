@@ -2,6 +2,7 @@
 /*             REVENGE LEGENDS - STYLESHEET LENGKAP v5.2               */
 /* =================================================================== */
 
+/* --- Variabel & Reset Dasar --- */
 :root{--primary-red:#9d2020;--primary-red-glow:rgba(200,42,42,.7);--support-discord:#5865F2;--whatsapp-green:#25D366;--email-gray:#7f8c8d;--youtube-red:#FF0000;--product-title-gold:#ffb703;--text-color:#d1d1d1;--dark-bg:#121212;--card-bg:#2a2d3a;--stone-border:#4a4a4a;--font-heading:'Saira Stencil One',sans-serif;--font-body:'Saira',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -10,7 +11,9 @@ body{font-family:var(--font-body);background-color:var(--dark-bg);color:var(--te
 h1,h2,h3{font-family:var(--font-heading);letter-spacing:1.5px;color:#fff}
 h2{font-size:3rem;text-align:center;margin-bottom:50px;text-transform:uppercase;text-shadow:0 0 15px var(--primary-red-glow)}
 section{padding:100px 0;position:relative}
-header{background-color:transparent;position:fixed;width:100%;top:0;z-index:1002;transition:background-color .4s ease,backdrop-filter .4s ease}
+
+/* --- Header & Navigasi Desktop --- */
+header{background-color:transparent;position:fixed;width:100%;top:0;z-index:1000;transition:background-color .4s ease,backdrop-filter .4s ease}
 header.scrolled,header.header-solid{background-color:rgba(18,18,18,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone-border)}
 nav.container{display:flex;justify-content:space-between;align-items:center;height:80px}
 .nav-logo{display:flex;align-items:center;text-decoration:none;color:#fff;font-family:var(--font-heading);font-size:1.4rem;transition:transform .3s ease}
@@ -23,13 +26,29 @@ nav ul.desktop-nav li a:hover{color:#fff;text-shadow:0 0 8px var(--primary-red-g
 .nav-button-support a{display:inline-flex;align-items:center;gap:8px;background-color:var(--primary-red);padding:8px 18px;border-radius:50px;font-size:.9rem;box-shadow:0 0 15px var(--primary-red-glow);transition:all .3s ease;border-bottom:none;color:#fff}
 .nav-button-support a:hover{transform:scale(1.05);box-shadow:0 0 25px var(--primary-red-glow);border-bottom:none;color:#fff}
 .nav-button-support a i{font-size:1em}
-.hamburger-button{display:none;background:0 0;border:none;color:#fff;font-size:1.8rem;cursor:pointer;z-index:1001}
-.mobile-nav{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(18,18,18,.98);backdrop-filter:blur(10px);z-index:1000;flex-direction:column;justify-content:center;align-items:center}
-.mobile-nav.active{display:flex}
-.mobile-nav ul{list-style:none;padding:0;text-align:center}
-.mobile-nav ul li{margin:25px 0}
-.mobile-nav ul li a{color:#fff;text-decoration:none;font-size:2rem;font-family:var(--font-heading);transition:color .3s,text-shadow .3s}
-.mobile-nav ul li a:hover{color:#9d2020;text-shadow:0 0 10px rgba(200,42,42,.7)}
+.hamburger-button{display:none;background:0 0;border:none;color:#fff;font-size:1.8rem;cursor:pointer;z-index:1200} /* z-index dinaikkan */
+
+/* --- [BARU] Sidebar Navigasi Mobile --- */
+.sidebar-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);z-index:1099;opacity:0;pointer-events:none;transition:opacity .3s ease-in-out}
+.sidebar-overlay.active{opacity:1;pointer-events:auto}
+#sidebar-nav{position:fixed;top:0;left:0;height:100%;width:280px;background-color:#1e1e2c;z-index:1100;transform:translateX(-100%);transition:transform .3s ease-in-out;display:flex;flex-direction:column;padding:25px;border-right:1px solid var(--stone-border)}
+#sidebar-nav.active{transform:translateX(0)}
+.sidebar-header{text-align:center;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--stone-border)}
+.sidebar-header img{width:80px;height:80px;border-radius:50%;border:3px solid var(--primary-red);margin-bottom:15px}
+.sidebar-header h3{font-family:var(--font-heading);font-size:1.5rem;color:#fff}
+.sidebar-header p{color:var(--product-title-gold);font-size:.9rem}
+.sidebar-socials{display:flex;justify-content:center;gap:20px;margin-bottom:30px}
+.sidebar-socials a{color:var(--text-color);font-size:1.5rem;transition:color .3s,transform .3s}
+.sidebar-socials a:hover{color:#fff;transform:scale(1.1)}
+.sidebar-links{list-style:none;padding:0;flex-grow:1}
+.sidebar-links li a{display:flex;align-items:center;gap:15px;padding:15px 10px;text-decoration:none;color:var(--text-color);font-size:1.1rem;font-weight:700;border-radius:8px;transition:background-color .3s,color .3s}
+.sidebar-links li a:hover{background-color:var(--card-bg);color:#fff}
+.sidebar-links li a i{width:20px;text-align:center}
+.sidebar-footer{text-align:center;font-size:.8rem;color:#888;padding-top:20px}
+/* Hapus menu mobile lama */
+.mobile-nav{display:none}
+
+/* --- Halaman: Hero Section --- */
 main.page-content{padding-top:120px;padding-bottom:60px}
 #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
 #hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,rgba(18,18,18,.5) 0,rgba(18,18,18,1) 80%);z-index:1}
@@ -52,6 +71,8 @@ a.status-box:hover{transform:scale(1.05);background-color:rgba(255,255,255,.1)}
 .cta-button:hover{background-color:#c02a2a;transform:translateY(-5px) scale(1.05);box-shadow:0 0 25px var(--primary-red-glow)}
 .hidden{opacity:0;transform:translateY(30px);transition:opacity .8s ease-out,transform .8s ease-out}
 .hidden.visible{opacity:1;transform:translateY(0)}
+
+/* --- Halaman: Fitur, Store, Gabung --- */
 #fitur,#store,#gabung{padding-bottom:60px}
 .fitur-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
 .fitur-item{background:rgba(30,30,30,.5);backdrop-filter:blur(10px);padding:35px;border-radius:10px;border:1px solid var(--stone-border);text-align:center;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
@@ -80,6 +101,8 @@ a.status-box:hover{transform:scale(1.05);background-color:rgba(255,255,255,.1)}
 .tutorial-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px;background-color:var(--youtube-red);color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;border-radius:8px;transition:background-color .3s,transform .2s}
 .tutorial-button:hover{background-color:#c40000;transform:scale(1.02)}
 .tutorial-button i{font-size:1.3em}
+
+/* --- Halaman: Generik & Komponen Store --- */
 .page-header{text-align:center;margin-bottom:40px;position:relative;padding-top:20px}
 .back-button{display:inline-flex;align-items:center;gap:8px;color:var(--text-color);text-decoration:none;font-weight:700;transition:color .3s;position:absolute;top:0;left:0;z-index:10}
 .back-button:hover{color:#fff}
@@ -103,9 +126,10 @@ a.status-box:hover{transform:scale(1.05);background-color:rgba(255,255,255,.1)}
 .features-button:hover{background-color:#636363}
 .purchase-button{background-color:var(--primary-red);color:#fff}
 .purchase-button:hover{background-color:#c02a2a}
-.purchase-button.purchased-state{background-color:#555;color:#aaa;cursor:not-allowed;opacity:.7;pointer-events:none}
 .product-item-card{padding:30px 20px}
 .product-item-price{display:block;font-size:1.5rem;font-weight:700;color:var(--product-title-gold);margin-bottom:25px}
+
+/* --- Halaman: Detail Rank --- */
 .rank-detail-header{text-align:center;margin-bottom:40px}
 .rank-detail-header img{max-width:120px;margin-bottom:20px;image-rendering:pixelated}
 .rank-detail-header h1{font-size:3rem;color:#fff}
@@ -118,6 +142,8 @@ a.status-box:hover{transform:scale(1.05);background-color:rgba(255,255,255,.1)}
 .features-list .fa-times{color:#e74c3c}
 .price-container-detail{text-align:center;margin-bottom:30px}
 .purchase-button.large{font-size:1.2rem;padding:15px;text-align:center}
+
+/* --- Halaman: Support & Payment --- */
 body.support-page #support{min-height:calc(100vh - 160px)}
 #support .page-header h2{text-shadow:0 0 15px var(--support-discord);margin-bottom:0;border:none}
 .support-subtitle,.item-details-display{text-align:center;margin:20px auto 40px;max-width:700px}
@@ -157,6 +183,17 @@ body.support-page #support{min-height:calc(100vh - 160px)}
 .confirmation-note i{font-size:1.5rem;color:var(--product-title-gold)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .fade-in-up{opacity:0;animation:fadeInUp .8s ease-out forwards;animation-delay:var(--anim-delay,0s)}
+
+/* --- Footer --- */
 footer{background:linear-gradient(to top,transparent,rgba(0,0,0,0));text-align:center;padding:50px 0 20px 0;font-size:.9rem;color:#aaa}
+
+/* --- Media Queries (Responsif) --- */
 @media (max-width:900px){.support-layout-grid,.join-grid,.payment-options-grid{grid-template-columns:1fr}}
-@media (max-width:768px){nav ul.desktop-nav{display:none}.hamburger-button{display:block}.form-row{flex-direction:column}h2{font-size:2.2rem}#hero h1{font-size:3.5rem}#hero p{font-size:1.1rem}}
+@media (max-width:768px){
+    nav ul.desktop-nav{display:none}
+    .hamburger-button{display:block}
+    .form-row{flex-direction:column}
+    h2{font-size:2.2rem}
+    #hero h1{font-size:3.5rem}
+    #hero p{font-size:1.1rem}
+}
