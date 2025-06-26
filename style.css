@@ -184,6 +184,118 @@ body.support-page #support{min-height:calc(100vh - 160px)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .fade-in-up{opacity:0;animation:fadeInUp .8s ease-out forwards;animation-delay:var(--anim-delay,0s)}
 
+/* Container untuk tombol konfirmasi di halaman payment.html */
+.payment-confirmation-button-container {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--stone-border);
+    text-align: center;
+}
+
+.payment-confirmation-button-container h3 {
+    margin-bottom: 20px;
+    text-transform: none;
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+}
+
+.payment-confirmation-button-container p {
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grid untuk kartu konfirmasi di payment-confirm.html */
+.confirmation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Desain kartu konfirmasi */
+.confirmation-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--stone-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.confirmation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+.confirmation-card i.fab {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.confirmation-card .fa-whatsapp {
+    color: var(--whatsapp-green);
+}
+
+.confirmation-card .fa-discord {
+    color: var(--support-discord);
+}
+
+.confirmation-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    text-transform: none;
+    margin-bottom: 15px;
+}
+
+.confirmation-card p {
+    color: var(--text-color);
+    margin-bottom: 30px;
+    flex-grow: 1; /* Membuat tombol selalu di bawah */
+}
+
+/* Tombol konfirmasi di dalam kartu */
+.confirm-button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.confirm-button:hover {
+    transform: scale(1.02);
+}
+
+.confirm-button.whatsapp {
+    background-color: var(--whatsapp-green);
+}
+.confirm-button.whatsapp:hover {
+    background-color: #1EBE57;
+}
+
+.confirm-button.discord {
+    background-color: var(--support-discord);
+}
+.confirm-button.discord:hover {
+    background-color: #4752C4;
+}
+
+
 /* --- Footer --- */
 footer{background:linear-gradient(to top,transparent,rgba(0,0,0,0));text-align:center;padding:50px 0 20px 0;font-size:.9rem;color:#aaa}
 
