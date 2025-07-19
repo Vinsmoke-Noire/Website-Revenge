@@ -3,7 +3,7 @@
 /* =================================================================== */
 
 /* --- Variabel & Reset Dasar --- */
-:root{--primary-red:#9d2020;--primary-red-glow:rgba(200,42,42,.7);--support-discord:#5865F2;--whatsapp-green:#25D366;--email-gray:#7f8c8d;--youtube-red:#FF0000;--product-title-gold:#ffb703;--text-color:#d1d1d1;--dark-bg:#121212;--card-bg:#2a2d3a;--stone-border:#4a4a4a;--font-heading:'Saira Stencil One',sans-serif;--font-body:'Saira',sans-serif}
+:root{--primary-red:#9d2020;--primary-red-glow:rgba(200,42,42,.7);--support-discord:#5865F2;--whatsapp-green:#25D366;--email-gray:#7f8c8d;--youtube-red:#FF0000;--product-title-gold:#ffb703;--text-color:#d1d1d1;--dark-bg:#121212;--card-bg:#2a2d3a;--stone-border:#4a4a4a;--gallery-blue:#00a8cc;--gallery-blue-glow:rgba(0,168,204,.7);--font-heading:'Saira Stencil One',sans-serif;--font-body:'Saira',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);background-color:var(--dark-bg);color:var(--text-color);line-height:1.6;background:#000 url(https://www.minecraft.net/content/dam/games/minecraft/key-art/Minecraft-Player-In-Cave.jpeg) no-repeat center center/cover;background-attachment:fixed}
@@ -23,9 +23,13 @@ nav ul.desktop-nav{list-style:none;display:flex;align-items:center}
 nav ul.desktop-nav li{margin-left:25px}
 nav ul.desktop-nav li a{text-decoration:none;color:var(--text-color);font-weight:700;transition:color .3s ease,text-shadow .3s ease;padding-bottom:5px;border-bottom:2px solid transparent}
 nav ul.desktop-nav li a:hover{color:#fff;text-shadow:0 0 8px var(--primary-red-glow);border-bottom-color:var(--primary-red)}
-.nav-button-support a{display:inline-flex;align-items:center;gap:8px;background-color:var(--primary-red);padding:8px 18px;border-radius:50px;font-size:.9rem;box-shadow:0 0 15px var(--primary-red-glow);transition:all .3s ease;border-bottom:none;color:#fff}
-.nav-button-support a:hover{transform:scale(1.05);box-shadow:0 0 25px var(--primary-red-glow);border-bottom:none;color:#fff}
-.nav-button-support a i{font-size:1em}
+.nav-button-support a, .nav-button-gallery a {display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:50px;font-size:.9rem;transition:all .3s ease;border-bottom:none;color:#fff}
+.nav-button-support a:hover, .nav-button-gallery a:hover {transform:scale(1.05);border-bottom:none;color:#fff}
+.nav-button-support a i, .nav-button-gallery a i {font-size:1em}
+.nav-button-support a {background-color:var(--primary-red);box-shadow:0 0 15px var(--primary-red-glow)}
+.nav-button-support a:hover {box-shadow:0 0 25px var(--primary-red-glow)}
+.nav-button-gallery a {background-color:var(--gallery-blue);box-shadow:0 0 15px var(--gallery-blue-glow)}
+.nav-button-gallery a:hover {box-shadow:0 0 25px var(--gallery-blue-glow)}
 .hamburger-button{display:none;background:0 0;border:none;color:#fff;font-size:1.8rem;cursor:pointer;z-index:1200} /* z-index dinaikkan */
 
 /* --- [BARU] Sidebar Navigasi Mobile --- */
@@ -101,6 +105,121 @@ a.status-box:hover{transform:scale(1.05);background-color:rgba(255,255,255,.1)}
 .tutorial-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px;background-color:var(--youtube-red);color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;border-radius:8px;transition:background-color .3s,transform .2s}
 .tutorial-button:hover{background-color:#c40000;transform:scale(1.02)}
 .tutorial-button i{font-size:1.3em}
+
+/* --- Komponen: Infinite Carousel --- */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+@keyframes scroll-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+    width: 100%;
+}
+.carousel-container:hover .carousel-track {
+    animation-play-state: paused;
+}
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    will-change: transform;
+    animation: scroll 40s linear infinite;
+}
+.carousel-track.reverse {
+    animation-name: scroll-reverse;
+}
+.carousel-item {
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--stone-border);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.carousel-item:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-red);
+    z-index: 5;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Halaman: Gallery Preview Section (index.html) --- */
+#gallery {
+    background-color: var(--dark-bg);
+    border-top: 1px solid var(--stone-border);
+    border-bottom: 1px solid var(--stone-border);
+}
+.gallery-subtitle {
+    text-align: center;
+    margin: -30px auto 50px;
+    max-width: 600px;
+}
+.carousel-preview-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+.carousel-preview-group h3 {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    text-transform: none;
+    margin-bottom: 20px;
+    color: var(--gallery-blue);
+    text-align: center;
+}
+/* Ukuran item carousel khusus untuk homepage */
+.carousel-preview-grid .carousel-item {
+    flex: 0 0 280px;
+    height: 180px;
+}
+/* Gradient overlay di homepage */
+.carousel-preview-grid .carousel-container::before,
+.carousel-preview-grid .carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+.carousel-preview-grid .carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--dark-bg), transparent);
+}
+.carousel-preview-grid .carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--dark-bg), transparent);
+}
+.gallery-cta-container {
+    text-align: center;
+}
+.gallery-cta-button {
+    display: inline-block;
+    background-color: var(--gallery-blue);
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: all .3s ease;
+    box-shadow: 0 0 15px transparent;
+}
+.gallery-cta-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 25px var(--gallery-blue-glow);
+}
 
 /* --- Halaman: Generik & Komponen Store --- */
 .page-header{text-align:center;margin-bottom:40px;position:relative;padding-top:20px}
@@ -293,6 +412,29 @@ body.support-page #support{min-height:calc(100vh - 160px)}
 }
 .confirm-button.discord:hover {
     background-color: #4752C4;
+}
+
+/* --- Komponen: Animasi Halaman --- */
+@keyframes fadeInUpPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-load-animation {
+    animation: fadeInUpPage 0.8s ease-out 0.2s;
+    animation-fill-mode: both;
+}
+
+/* Container untuk tombol konfirmasi di halaman payment.html */
+.payment-confirmation-button-container {
+    margin-top: 40px;
+    padding: 30px;
 }
 
 
