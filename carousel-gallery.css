@@ -1,0 +1,187 @@
+/* =================================================================== */
+/*           STYLES FOR CAROUSEL ALBUM PAGE - REVENGE LEGENDS          */
+/* =================================================================== */
+
+#album-detail {
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+#album-detail .page-header h1 {
+    font-size: 3.5rem;
+    color: var(--product-title-gold);
+    text-shadow: 0 0 15px rgba(255, 183, 3, 0.4);
+}
+
+.carousel-group {
+    margin-bottom: 60px;
+}
+
+.carousel-group h2 {
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    text-transform: none;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--stone-border);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+}
+
+.carousel-group h2 i {
+    color: var(--primary-red);
+}
+
+/* Specific Gradient overlay for this page */
+#album-detail .carousel-container::before,
+#album-detail .carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+#album-detail .carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--dark-bg), transparent);
+}
+#album-detail .carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--dark-bg), transparent);
+}
+
+/* Item size for album page */
+#album-detail .carousel-item {
+    flex: 0 0 320px;
+    height: 200px;
+}
+
+
+/* Notes Section Styling */
+.season-notes {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    border-left: 5px solid var(--product-title-gold);
+}
+
+.season-notes h3 {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.season-notes h3 i {
+    color: var(--product-title-gold);
+}
+
+.season-notes p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+.season-notes p:last-child {
+    margin-bottom: 0;
+}
+
+/* [BARU] Player Messages Section */
+.player-messages-container {
+    margin-top: 60px;
+}
+
+.player-messages-container h3 {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.player-messages-container h3 i {
+    color: var(--gallery-blue);
+}
+
+.messages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.message-card {
+    background-color: var(--dark-bg);
+    border-radius: 10px;
+    padding: 25px;
+    border-top: 4px solid var(--stone-border);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-top-color 0.3s ease;
+    position: relative;
+}
+
+.message-card:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--gallery-blue);
+}
+
+.message-text {
+    flex-grow: 1; /* Pushes player name to the bottom */
+    margin-bottom: 20px;
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Fancy quotation mark */
+.message-text::before {
+    content: '“';
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 3.5rem;
+    font-family: serif;
+    color: var(--stone-border);
+    opacity: 0.2;
+    z-index: 0;
+}
+
+
+.player-name {
+    text-align: right;
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #album-detail .carousel-item {
+        flex-basis: 280px;
+        height: 175px;
+    }
+    #album-detail .page-header h1 {
+        font-size: 2.5rem;
+    }
+    #album-detail .carousel-container::before,
+    #album-detail .carousel-container::after {
+        width: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    #album-detail .carousel-item {
+        flex-basis: 220px;
+        height: 140px;
+    }
+}
